@@ -1,7 +1,27 @@
 const menuBtn = document.getElementById("menu-btn")
 const navLinks = document.getElementById("nav-links")
 const menuBtnIcon = menuBtn.querySelector("i")
+const titles = [
+    "Strength Training",
+    "Cardio Workout",
+    "Body Building",
+    "Fitness Routine",
+    "Yoga Training",
+    "Crossfit",
+    "HIIT Training",
+    "Personal Coaching"
+];
+const desc = [
+    "Build strength and power with intense training programs designed for all fitness levels.",
+    "Boost your stamina and heart health with high-energy cardio workouts and routines.",
+    "Sculpt your body and gain muscle with expert-guided bodybuilding techniques.",
+    "Stay consistent and achieve your goals with structured daily fitness routines.",
+    "Relax your mind and improve flexibility through calming and effective yoga sessions.",
+    "Push your limits with high-intensity crossfit training for total body transformation.",
+    "Burn fat fast with high-intensity interval training designed for maximum results in less time.",
 
+    "Get personalized workout plans and one-on-one guidance to reach your fitness goals faster."
+];
 menuBtn.addEventListener("click", () => {
     navLinks.classList.toggle("open");
 
@@ -46,4 +66,23 @@ ScrollReveal().reveal(".header_socials li", {
     ...scrollRevealOption,
     delay: 2500,
     interval: 500
+});
+
+
+
+
+ScrollReveal().reveal(".card-container .card", {
+    ...scrollRevealOption,
+    delay: 200,
+    interval: 500,
+});
+
+
+
+
+
+
+document.querySelectorAll(".card").forEach((card, i) => {
+    card.querySelector("h3").textContent = titles[i];
+    card.querySelector("p").textContent = desc[i];
 });
